@@ -3,21 +3,25 @@ package co.edu.unbosque.model;
 import co.edu.unbosque.util.grafo.generico.Vertex;
 import co.edu.unbosque.util.simple.MyLinkedList;
 
-public class Lugar {
+public class LugarDTO {
 	
 	private String name;
 	private MyLinkedList<Vertex<PersonaDTO>> visitantes;
 	
-	public Lugar() {
+	public LugarDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Lugar(String name, MyLinkedList<Vertex<PersonaDTO>> visitantes) {
+	public LugarDTO(String name, MyLinkedList<Vertex<PersonaDTO>> visitantes) {
 		super();
 		this.name = name;
 		this.visitantes = visitantes;
 	}
-
+	
+	public LugarDTO(String name) {
+		this(name, new MyLinkedList<>());
+	}
+	
 	public String getName() {
 		return name;
 	}

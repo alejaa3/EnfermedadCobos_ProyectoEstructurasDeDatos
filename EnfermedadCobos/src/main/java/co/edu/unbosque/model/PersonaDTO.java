@@ -4,23 +4,21 @@ import co.edu.unbosque.util.simple.MyLinkedList;
 
 public class PersonaDTO {
 	
-	private String name;
-	private String surname;
+	private String fullName;
 	private String birthdate;
 	private long id;
 	private String nationality;
-	private MyLinkedList<Enfermedad> diseases;
-	private MyLinkedList<Lugar> visited;
+	private MyLinkedList<EnfermedadDTO> diseases;
+	private MyLinkedList<LugarDTO> visited;
 	
 	public PersonaDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PersonaDTO(String name, String surname, String birthdate, long id, String nationality,
-			MyLinkedList<Enfermedad> diseases, MyLinkedList<Lugar> visited) {
+	public PersonaDTO(String fullName, String birthdate, long id, String nationality,
+			MyLinkedList<EnfermedadDTO> diseases, MyLinkedList<LugarDTO> visited) {
 		super();
-		this.name = name;
-		this.surname = surname;
+		this.fullName = fullName;
 		this.birthdate = birthdate;
 		this.id = id;
 		this.nationality = nationality;
@@ -28,20 +26,12 @@ public class PersonaDTO {
 		this.visited = visited;
 	}
 
-	public String getName() {
-		return name;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getBirthdate() {
@@ -68,23 +58,26 @@ public class PersonaDTO {
 		this.nationality = nationality;
 	}
 
-	public MyLinkedList<Enfermedad> getDiseases() {
+	public MyLinkedList<EnfermedadDTO> getDiseases() {
 		return diseases;
 	}
 
-	public void setDiseases(MyLinkedList<Enfermedad> diseases) {
+	public void setDiseases(MyLinkedList<EnfermedadDTO> diseases) {
 		this.diseases = diseases;
 	}
 
-	public MyLinkedList<Lugar> getVisited() {
+	public MyLinkedList<LugarDTO> getVisited() {
 		return visited;
 	}
 
-	public void setVisited(MyLinkedList<Lugar> visited) {
+	public void setVisited(MyLinkedList<LugarDTO> visited) {
 		this.visited = visited;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "PersonaDTO [fullName=" + fullName + ", birthdate=" + birthdate + ", id=" + id + ", nationality="
+				+ nationality + ", diseases=" + diseases + ", visited=" + visited + "]";
+	}
 
 }

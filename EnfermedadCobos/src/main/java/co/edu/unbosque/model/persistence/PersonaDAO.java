@@ -6,43 +6,45 @@ import co.edu.unbosque.util.simple.MyLinkedList;
 
 public class PersonaDAO {
 	
-	private MyLinkedList<Vertex<PersonaDTO>> personas;
+	private MyLinkedList<Vertex<Object>> personas;
 	
 	public PersonaDAO() {
-		// TODO Auto-generated constructor stub
+		personas = new MyLinkedList<Vertex<Object>>();
 	}
 	
-	public void addPerson(PersonaDTO person) {
+	public MyLinkedList<Vertex<Object>> getPersonas() {
+		return personas;
+	}
+
+	public void setPersonas(MyLinkedList<Vertex<Object>> personas) {
+		this.personas = personas;
+	}
+
+	public void createPerson(PersonaDTO person) {
 		if(person != null) {
-			personas.add(new Vertex<PersonaDTO>(person));
-			
+			personas.add(new Vertex<Object>(person));
 		}
 		
 	}
-	
 	public String showPeople() {
-		String resp = "";
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < personas.size(); i++) {
-			resp += personas.get(i).getInfo();
+			PersonaDTO person = (PersonaDTO) personas.get(i).getInfo();
+			sb.append((i+1)+") "+person.getFullName()+"\n");
 		}
-		return resp;
+		return sb.toString();
 	}
 	
-	public String showListPeople() {
-		String resp = "";
-		for (int i = 0; i < personas.size(); i++) {
-			String nombre = personas.get(i).getInfo().getName();
-			String apellido = personas.get(i).getInfo().getSurname();
-			resp += (i+1)+nombre+" "+apellido+"\n";
-		}
-		return resp;
-	}
-	
-	public void updatePerson(PersonaDTO person) {
+	public void readPerson() {
 		
 	}
 	
-	public void deletePerson() {
+	public void updatePerson() {
+		
+		
+	}
+	
+	public void removePerson() {
 		
 	}
 	
